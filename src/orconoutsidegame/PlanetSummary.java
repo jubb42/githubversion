@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JTextArea;
 
+
 public class PlanetSummary extends JPanel {
 
 	/**
@@ -14,13 +15,17 @@ public class PlanetSummary extends JPanel {
 	private static final long serialVersionUID = 3369821680103545767L;
 	public static JTextArea jta;
 	private Planet currentPlanet;
-	private JSlider construction;
-	private JSlider security;
-	private JSlider agriculture;
-	private JSlider trade;
-	private JSlider research;
+	
+	//J created a Custom class called myJslider for our sliders so they can ge more easily customized.
+	private myJSlider construction;
+	private myJSlider security;
+	private myJSlider agriculture;
+	private myJSlider trade;
+	private myJSlider research;
+	
 	public PlanetSummary(){
-		setLayout(new GridLayout(8,1));
+		//J Decreased this from 8 to 7 to make all the data fit on the screen.
+		setLayout(new GridLayout(7,1));
 		
 		jta = new JTextArea(60,60);
 		add(jta);
@@ -33,11 +38,11 @@ public class PlanetSummary extends JPanel {
 		 * with construction
 		 */
 		//builds all the JSliders
-		construction = new JSlider();
-		security = new JSlider();
-		agriculture = new JSlider();
-		trade = new JSlider();
-		research = new JSlider();
+		construction = new myJSlider();// min, max, intial
+		security = new myJSlider();
+		agriculture = new myJSlider();
+		trade = new myJSlider();
+		research = new myJSlider();
 		
 		add(construction);
 		add(security);
