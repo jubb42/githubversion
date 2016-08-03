@@ -1,9 +1,13 @@
 package orconoutsidegame;
 
 import java.awt.Color;
-import java.awt.GridLayout;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
@@ -30,15 +34,31 @@ public class PlanetSummary extends JPanel {
 	private JButton tradeLock;
 	private JButton researchLock;
 	
+	private JLabel constructionLabel;
+	private JLabel securityLabel;
+	private JLabel agricultureLabel;
+	private JLabel tradeLabel;
+	private JLabel researchLabel;
+	
+	private final ImageIcon iconLock = new ImageIcon(getClass().getResource("LockTest1.png"));
+	
 	
 	public PlanetSummary(){
+		
 		//J Decreased this from 8 to 7 to make all the data fit on the screen.
-		setLayout(new GridLayout(6,2));
-	
+		setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+		
+			
+		
+		
 		
 		jta = new JTextArea(60,60);
 		jta.setOpaque(false);
-		add(jta);
+		c.gridx = 0;
+		c.gridy = 0;
+		
+		add(jta,c);
 		
 		/*
 		 * In this area we need to code all the elements that we want to see in the planet summary box.
@@ -48,28 +68,125 @@ public class PlanetSummary extends JPanel {
 		 * with construction
 		 */
 		//builds all the JSliders
+		
+		constructionLabel = new JLabel("CONSTRUCTION");
+		constructionLabel.setFont(new Font("Serif", Font.BOLD, 20));
+		constructionLabel.setForeground(Color.WHITE);
+		c.fill = GridBagConstraints.BOTH;
+		c.gridx = 0;
+		c.gridy = 1;
+		add(constructionLabel,c);
+		
 		construction = new myJSlider();// min, max, intial
 		construction.setOpaque(false);
-		construction.setForeground(Color.GREEN);
+		construction.setForeground(Color.WHITE);
 //		construction.disable();   // can be used in conjunction with the lock button
-		add(construction);
+		c.fill = GridBagConstraints.BOTH;
+		c.gridx = 0;
+		c.gridy = 2;
+		add(construction,c);
 		
+		
+		
+		constructionLock = new JButton(iconLock);
+		c.fill = GridBagConstraints.BOTH;
+		c.gridx = 1;
+		c.gridy = 2;
+		add(constructionLock,c);
+				
+		securityLabel = new JLabel("SECURITY");
+		securityLabel.setFont(new Font("Serif", Font.BOLD, 20));
+		securityLabel.setForeground(Color.WHITE);
+		c.gridx = 0;
+		c.gridy = 3;
+		add(securityLabel,c);
 			
 		security = new myJSlider();
 		security.setOpaque(false);
-		add(security);
+		security.setForeground(Color.WHITE);
+		c.fill = GridBagConstraints.BOTH;
+		c.weightx = 100.0;
+		c.gridx = 0;
+		c.gridy = 4;
+		add(security,c);
 		
+		securityLock = new JButton(iconLock);
+		c.fill = GridBagConstraints.BOTH;
+		c.weightx = 0.0;
+		c.gridx = 1;
+		c.gridy = 4;
+		add(securityLock,c);
+		
+		
+		agricultureLabel = new JLabel("AGRICULTURE");
+		agricultureLabel.setFont(new Font("Serif", Font.BOLD, 20));
+		agricultureLabel.setForeground(Color.WHITE);
+		c.gridx = 0;
+		c.gridy = 5;
+		add(agricultureLabel,c);
+				
 		agriculture = new myJSlider();
 		agriculture.setOpaque(false);
-		add(agriculture);
+		agriculture.setForeground(Color.WHITE);
+		c.fill = GridBagConstraints.BOTH;
+		c.weightx = 0;
+		c.gridx = 0;
+		c.gridy = 6;
+		add(agriculture,c);
+		
+		agricultureLock = new JButton(iconLock);
+		c.fill = GridBagConstraints.BOTH;
+		c.gridx = 1;
+		c.gridy = 6;
+		add(agricultureLock,c);
+		
+		
+		
+		tradeLabel = new JLabel("TRADE");
+		tradeLabel.setFont(new Font("Serif", Font.BOLD, 20));
+		tradeLabel.setForeground(Color.WHITE);
+		c.fill = GridBagConstraints.BOTH;
+		c.gridx = 0;
+		c.gridy = 7;
+		add(tradeLabel,c);
 		
 		trade = new myJSlider();
 		trade.setOpaque(false);
-		add(trade);
+		trade.setForeground(Color.WHITE);
+		c.fill = GridBagConstraints.BOTH;
+		c.weightx = 0;
+		c.gridx = 0;
+		c.gridy =8;
+		add(trade,c);
+		
+		tradeLock = new JButton(iconLock);
+		c.fill = GridBagConstraints.BOTH;
+		c.gridx = 1;
+		c.gridy = 8;
+		add(tradeLock,c);
+		
+		researchLabel = new JLabel("RESEARCH");
+		researchLabel.setFont(new Font("Serif", Font.BOLD, 20));
+		researchLabel.setForeground(Color.WHITE);
+		c.fill = GridBagConstraints.BOTH;
+		c.gridx = 0;
+		c.gridy = 9;
+		add(researchLabel,c);
 		
 		research = new myJSlider();
 		research.setOpaque(false);
-		add(research);
+		research.setForeground(Color.WHITE);
+		c.fill = GridBagConstraints.BOTH;
+		c.weightx = 0;
+		c.gridx = 0;
+		c.gridy = 10;
+		add(research,c);
+		
+		researchLock = new JButton(iconLock);
+		c.fill = GridBagConstraints.BOTH;
+		c.gridx = 1;
+		c.gridy = 10;
+		add(researchLock,c);
 	}
 
 	
