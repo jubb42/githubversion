@@ -1,6 +1,8 @@
 package orconoutsidegame;
 
 import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
@@ -32,14 +34,23 @@ public class PlanetSummary extends JPanel {
 	
 	
 	public PlanetSummary(){
-		//J Decreased this from 8 to 7 to make all the data fit on the screen.
-		setLayout(new GridLayout(6,2));
-	
+		//setLayout(new GridLayout(6,2));
+		setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+		
 		
 		jta = new JTextArea(60,60);
 		jta.setOpaque(false);
 		add(jta);
 		
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0;
+	    c.gridx = 0;
+	    c.gridy = 0;
+	   add(jta, c);
+	    
+	    
+			
 		/*
 		 * In this area we need to code all the elements that we want to see in the planet summary box.
 		 * Namely, name, variables food and credits, 5 slider bars for the planet areas of focus,
@@ -48,28 +59,101 @@ public class PlanetSummary extends JPanel {
 		 * with construction
 		 */
 		//builds all the JSliders
-		construction = new myJSlider();// min, max, intial
-		construction.setOpaque(false);
-		construction.setForeground(Color.GREEN);
-//		construction.disable();   // can be used in conjunction with the lock button
-		add(construction);
 		
-			
+		
+		//I moved your stuff over to the myJslider.java class so that it would affect all of them.
+		
+		
+		construction = new myJSlider();// min, max, intial
+		//construction.disable();   // now movedto .lock() inside myJslider.java
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.9;
+		c.ipady = 30;
+		c.gridx = 0;
+	    c.gridy = 1;
+		add(construction, c);
+		
+		constructionLock = new JButton();
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.1;
+		c.ipady = 30;
+		c.gridx = 1;
+	    c.gridy = 1;
+		add(constructionLock, c);
+		
+		
 		security = new myJSlider();
-		security.setOpaque(false);
-		add(security);
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.9;
+		c.ipady = 30;
+		c.gridx = 0;
+	    c.gridy = 2;
+		add(security, c);
+		
+		securityLock = new JButton();
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.1;
+		c.ipady = 30;
+		c.gridx = 1;
+	    c.gridy = 2;
+		add(securityLock, c);
+		
 		
 		agriculture = new myJSlider();
-		agriculture.setOpaque(false);
-		add(agriculture);
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.9;
+		c.ipady = 30;
+		c.gridx = 0;
+	    c.gridy = 3;
+		add(agriculture, c);
+		
+		agricultureLock = new JButton();
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.1;
+		c.ipady = 30;
+		c.gridx = 1;
+	    c.gridy = 3;
+		add(agricultureLock, c);
 		
 		trade = new myJSlider();
-		trade.setOpaque(false);
-		add(trade);
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.9;
+		c.ipady = 30;
+		c.gridx = 0;
+	    c.gridy = 4;
+		add(trade, c);
 		
-		research = new myJSlider();
-		research.setOpaque(false);
-		add(research);
+		tradeLock = new JButton();
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.ipady = 30;
+		c.weightx = 0.1;
+		c.gridx = 1;
+	    c.gridy = 4;
+		add(tradeLock, c);
+		
+		research = new myJSlider();// min, max, intial
+		//construction.disable();   // now movedto .lock() inside myJslider.java
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.9;
+		c.ipady = 30;
+		c.gridx = 0;
+	    c.gridy = 5;
+		add(research, c);
+		
+		researchLock = new JButton();
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.1;
+		c.ipady = 30;
+		c.gridx = 1;
+	    c.gridy = 5;
+		add(researchLock, c);
+		
+		
+		
+		//this just demonstrates my new function which does the disable.
+		research.lock();
+		
+			
 	}
 
 	
