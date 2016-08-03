@@ -58,8 +58,9 @@ public class mainFunction {
 		window.setLocation(0,0);
 		
 		planetSummary.setSize(width/5, height*3/4);
-		
 		planetSummary.setLocation(width*3/4, height*1/10);
+		planetSummary.setOpaque(false);
+		
 		
 		//adds the layered pane to the frame
         frame.add(layeredPane, BorderLayout.CENTER);

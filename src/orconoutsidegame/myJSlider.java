@@ -1,11 +1,13 @@
 package orconoutsidegame;
 
+import java.awt.Color;
+
 import javax.swing.BoundedRangeModel;
 import javax.swing.JSlider;
 
 public class myJSlider extends JSlider {
 
-
+	
 	public myJSlider() {
 		// TODO Auto-generated constructor stub
 		super(0,100,20);
@@ -13,6 +15,8 @@ public class myJSlider extends JSlider {
 		//construction.setMinorTickSpacing(1);
 		super.setPaintTicks(true);
 		super.setPaintLabels(true);
+	
+		
 	}
 
 	public myJSlider(int orientation) {
