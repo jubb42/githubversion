@@ -15,6 +15,8 @@ public class myJSlider extends JSlider {
 		//construction.setMinorTickSpacing(1);
 		super.setPaintTicks(true);
 		super.setPaintLabels(true);
+		super.setOpaque(false);
+		super.setForeground(Color.GREEN);
 	
 		
 	}
@@ -49,4 +51,9 @@ public class myJSlider extends JSlider {
 
 	}
 
+	
+	public void lock(){
+		super.disable();
+	
+	}
 }
