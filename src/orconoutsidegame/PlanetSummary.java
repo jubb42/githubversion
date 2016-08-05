@@ -1,16 +1,12 @@
 package orconoutsidegame;
 
 import java.awt.Color;
-<<<<<<< HEAD
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-=======
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
->>>>>>> origin/master
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -50,21 +46,18 @@ public class PlanetSummary extends JPanel {
 	
 	
 	public PlanetSummary(){
-<<<<<<< HEAD
+
 		
-		//J Decreased this from 8 to 7 to make all the data fit on the screen.
-		setLayout(new GridBagLayout());
-		GridBagConstraints c = new GridBagConstraints();
-		
+	
 			
 		
 		
-=======
+
 		//setLayout(new GridLayout(6,2));
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
->>>>>>> origin/master
+
 		
 		jta = new JTextArea(60,60);
 		jta.setOpaque(false);
@@ -73,11 +66,6 @@ public class PlanetSummary extends JPanel {
 		
 		add(jta,c);
 		
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.weightx = 0;
-	    c.gridx = 0;
-	    c.gridy = 0;
-	   add(jta, c);
 	    
 	    
 			
@@ -90,7 +78,6 @@ public class PlanetSummary extends JPanel {
 		 */
 		//builds all the JSliders
 		
-<<<<<<< HEAD
 		constructionLabel = new JLabel("CONSTRUCTION");
 		constructionLabel.setFont(new Font("Serif", Font.BOLD, 20));
 		constructionLabel.setForeground(Color.WHITE);
@@ -138,47 +125,11 @@ public class PlanetSummary extends JPanel {
 		c.gridx = 1;
 		c.gridy = 4;
 		add(securityLock,c);
-=======
 		
 		//I moved your stuff over to the myJslider.java class so that it would affect all of them.
 		
 		
-		construction = new myJSlider();// min, max, intial
-		//construction.disable();   // now movedto .lock() inside myJslider.java
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.weightx = 0.9;
-		c.ipady = 30;
-		c.gridx = 0;
-	    c.gridy = 1;
-		add(construction, c);
-		
-		constructionLock = new JButton();
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.weightx = 0.1;
-		c.ipady = 30;
-		c.gridx = 1;
-	    c.gridy = 1;
-		add(constructionLock, c);
-		
-		
-		security = new myJSlider();
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.weightx = 0.9;
-		c.ipady = 30;
-		c.gridx = 0;
-	    c.gridy = 2;
-		add(security, c);
-		
-		securityLock = new JButton();
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.weightx = 0.1;
-		c.ipady = 30;
-		c.gridx = 1;
-	    c.gridy = 2;
-		add(securityLock, c);
-		
->>>>>>> origin/master
-		
+				
 		
 		agricultureLabel = new JLabel("AGRICULTURE");
 		agricultureLabel.setFont(new Font("Serif", Font.BOLD, 20));
@@ -188,7 +139,7 @@ public class PlanetSummary extends JPanel {
 		add(agricultureLabel,c);
 				
 		agriculture = new myJSlider();
-<<<<<<< HEAD
+
 		agriculture.setOpaque(false);
 		agriculture.setForeground(Color.WHITE);
 		c.fill = GridBagConstraints.BOTH;
@@ -250,37 +201,8 @@ public class PlanetSummary extends JPanel {
 		c.gridx = 1;
 		c.gridy = 10;
 		add(researchLock,c);
-=======
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.weightx = 0.9;
-		c.ipady = 30;
-		c.gridx = 0;
-	    c.gridy = 3;
-		add(agriculture, c);
+
 		
-		agricultureLock = new JButton();
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.weightx = 0.1;
-		c.ipady = 30;
-		c.gridx = 1;
-	    c.gridy = 3;
-		add(agricultureLock, c);
-		
-		trade = new myJSlider();
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.weightx = 0.9;
-		c.ipady = 30;
-		c.gridx = 0;
-	    c.gridy = 4;
-		add(trade, c);
-		
-		tradeLock = new JButton();
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.ipady = 30;
-		c.weightx = 0.1;
-		c.gridx = 1;
-	    c.gridy = 4;
-		add(tradeLock, c);
 		
 		research = new myJSlider();// min, max, intial
 		//construction.disable();   // now movedto .lock() inside myJslider.java
@@ -305,7 +227,7 @@ public class PlanetSummary extends JPanel {
 		research.lock();
 		
 			
->>>>>>> origin/master
+
 	}
 
 	
